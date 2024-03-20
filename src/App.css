@@ -1,0 +1,139 @@
+.custom-select {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.15rem;
+
+    color: #000;
+}
+
+.select-button {
+    width: 100%;
+    background-color: #dfdfdf;
+
+    border: 1px solid #caced1;
+    cursor: pointer;
+    color: #777373;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.selected-value {
+    text-align: center;
+    font-size: 18px;
+    color: solid black !important;
+}
+
+.arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    transition: transform ease-in-out 0.3s;
+}
+
+
+.select-dropdown {
+    position: absolute;
+    list-style: none;
+    justify-items: center;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border: 2px solid #caced1;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: scroll;
+    transition: 0.5s ease;
+    min-height: auto;
+    transform: scaleY(0);
+    visibility: hidden;
+    z-index: 90;
+}
+
+.select-dropdown:focus-within {
+    box-shadow: 0 10px 25px rgba(94, 108, 233, 0.6);
+}
+
+.select-dropdown li {
+    position: relative;
+    max-width: 80%;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #ded7d7;
+    padding: 10px;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 24px;
+    margin-bottom: 8px;
+
+}
+
+
+.select-dropdown li label {
+    width: 100%;
+    padding: 10px 14px;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.select-dropdown::-webkit-scrollbar {
+    width: 7px;
+
+
+
+}
+
+.select-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+
+.select-dropdown::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+
+}
+
+
+.select-dropdown input:focus~label {
+    background-color: #dfdfdf;
+}
+
+.select-dropdown input[type="radio"] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+/* Interactivity */
+
+.custom-select.active .arrow {
+    transform: rotate(180deg);
+}
+
+.custom-select.active .select-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+/* Aesthetics */
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    min-height: 100vh;
+
+}
